@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Monocraft";
+  src: url("/monocraft.ttf") format("truetype");
+}
+
+:root {
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  image-rendering: pixelated;
+  font-family: "Monocraft", monospace;
+  background: black;
+  user-select: none;
+  font-size: 12px;
+  line-height: 1;
+  text-shadow: 0 0 4px #c8c8c8;
+}
+
+#screen {
+  height: 480px;
+  width: 640px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  color: white;
+  white-space: pre;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) blur(0.1px);
+}
+
+#screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
